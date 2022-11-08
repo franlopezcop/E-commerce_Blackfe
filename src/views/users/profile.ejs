@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include("../partials/head.ejs") %>
+    </head>
+<body>
+
+    <%- include("../partials/header.ejs") %>
+    <main class="main-login-register">
+        <h2 class="title">PERFIL DE <%= locals.estaLogueado.firstname.toUpperCase() %></h2>
+            <section class="detail-container">
+                <div class="detail-column-1">
+                    <div class="main-image">
+                        <img src="/images/users/<%= locals.estaLogueado.avatar %> " alt="Imagen de perfil">
+                    </div>
+                </div>
+                <div class="detail-column-2">
+                    <div>
+                        <h2>Descripción</h2>
+                        <hr>
+                        <h3 class="detail-modelo"><%= locals.estaLogueado.firstname.toUpperCase() + ' ' + locals.estaLogueado.lastname.toUpperCase() %> </h3>
+                        <p class="detail-description">
+                        Información:<br>
+                                Email: <%= locals.estaLogueado.email %>.<br>
+                                Contraseña: ********.<br>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <%- include("../partials/seguinos.ejs") %>
+        <%- include("../partials/conoceMas.ejs") %>
+        
+    </main>
+    <%- include("../partials/footer.ejs") %>
+</body>
+</html>
