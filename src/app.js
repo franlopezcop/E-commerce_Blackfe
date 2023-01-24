@@ -5,6 +5,7 @@ const methodOverride =  require('method-override'); // Pasar poder usar los mét
 const session = require('express-session');
 const cookies = require('cookie-parser');
 
+
 const userLoggedMiddleware = require('./middleware/userLoggedMiddleware');
 
 app.use(express.static(path.resolve(__dirname,'../public')));
@@ -38,10 +39,6 @@ app.use("/products", productRouter)
 
 const port = process.env.PORT || 3030;
 
-/*404
-app.use(function(req, res, next){
-    res.status(404).render('404.ejs', {title: "Sorry, page not found"});
-});*/
 
 app.listen(port, () => {
     console.log("Servidor corriendo en el puerto " + port);
